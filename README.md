@@ -41,7 +41,7 @@ A aplicação está disponível como uma imagem Docker no Docker Hub, execute os
 (Linux)
 docker pull balbsdev/fastapi-paneas
 cd /home/{seu_user}/FastApi_Paneas
-docker-compose up --build
+docker compose up --build
 ```
 
 ### Acessando a Aplicação

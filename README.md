@@ -29,13 +29,18 @@ Este projeto é uma implementação de uma API RESTful usando FastAPI para o Des
 
 ### Clonar o Repositório
 ```bash
-git clone [https://github.com/GusGBalbino/FastApi_Paneas.git]
+git clone https://github.com/GusGBalbino/FastApi_Paneas.git
 ```
 
+### Adicionar .env
+Adicione sua .env no diretório, baseada na .env-example disponibilizada.
+
 ### Executar com Docker
-A aplicação está disponível como uma imagem Docker no Docker Hub:
+A aplicação está disponível como uma imagem Docker no Docker Hub, execute os comandos a seguir:
 ```bash
+(Linux)
 docker pull balbsdev/fastapi-paneas
+cd /home/{seu_user}/FastApi_Paneas
 docker-compose up
 ```
 

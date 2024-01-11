@@ -55,9 +55,8 @@ Utilize as rotas documentadas no Swagger para interagir com a API.
 
 ### Autenticação com JWT - No Swagger
 - Registre um usuário usando a rota POST `/users/create`.
-- Obtenha um token JWT no response da rota POST `/users/token` utlizando as credenciais cadastradas anteriormente.
+- Obtenha um 'acess_token' no response da rota POST `/users/token` utlizando as credenciais cadastradas anteriormente.
 - Insira o token JWT na opção "Authentication" do Swagger para acessar as demais rotas protegidas.
-
 
 ---
 

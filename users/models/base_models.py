@@ -19,7 +19,7 @@ class UserCreateRequest(BaseModel):
     name: str = Field(..., example="John")
     lastname: str = Field(..., example="Doe")
     email: str = Field(..., example="john.doe@example.com")
-    password: str = Field(..., example="strongpassword")
+    password: SecretStr = Field(..., example="strongpassword")
 
     class Config:
         schema_extra = {

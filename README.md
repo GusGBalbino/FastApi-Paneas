@@ -1,2 +1,60 @@
-# FastApi-Paneas
-Code chalenge Paneas
+# FastAPI - Paneas | Desafio
+
+## Descrição
+Este projeto é uma implementação de uma API RESTful usando FastAPI para o Desafio FastAPI da Paneas. Foca-se em práticas de desenvolvimento robustas, escalabilidade, segurança e integração com PostgreSQL e Docker.
+
+## Requisitos do Desafio:
+1. **API de Gerenciamento de Usuários:**
+   - CRUD para usuários.
+   - Autenticação baseada em tokens (JWT).
+   - Permissões de usuário (admin, usuário regular).
+
+2. **Integração com Banco de Dados:**
+   - SQLAlchemy como ORM.
+   - PostgreSQL.
+   - Migrações de banco de dados com Alembic.
+
+3. **Documentação da API:**
+   - Swagger para documentação.
+
+4. **Dockerização da Aplicação:**
+   - Dockerfile para a aplicação.
+   - Docker-compose para orquestração da aplicação e banco de dados.
+
+## Pré-requisitos
+- Docker
+- Docker Compose
+
+## Configuração e Execução
+
+### Clonar o Repositório
+```bash
+git clone [URL do Repositório]
+cd [Nome do Repositório]
+```
+
+### Executar com Docker
+A aplicação está disponível como uma imagem Docker no Docker Hub:
+```bash
+docker pull balbsdev/fastapi-paneas
+docker-compose up
+```
+
+### Acessando a Aplicação
+Após iniciar, a API estará disponível em `http://localhost:8000`.
+
+## Uso da API
+Utilize as rotas documentadas no Swagger para interagir com a API.
+
+### Autenticação com JWT
+- Registre um usuário usando a rota POST `/users/create`.
+- Obtenha um token JWT na rota POST `/users/token` com as credenciais do usuário.
+- Insira o token JWT na opção "Authentication" do Swagger para acessar as demais rotas protegidas.
+
+
+## Documentação
+A documentação Swagger está disponível em `/docs` na aplicação em execução.
+
+---
+
+Desenvolvido para o Desafio FastAPI - Paneas.

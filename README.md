@@ -29,8 +29,7 @@ Este projeto é uma implementação de uma API RESTful usando FastAPI para o Des
 
 ### Clonar o Repositório
 ```bash
-git clone [URL do Repositório]
-cd [Nome do Repositório]
+git clone [https://github.com/GusGBalbino/FastApi_Paneas.git]
 ```
 
 ### Executar com Docker
@@ -43,17 +42,17 @@ docker-compose up
 ### Acessando a Aplicação
 Após iniciar, a API estará disponível em `http://localhost:8000`.
 
+## Documentação
+A documentação Swagger está disponível em `/docs` na aplicação em execução.
+
 ## Uso da API
 Utilize as rotas documentadas no Swagger para interagir com a API.
 
-### Autenticação com JWT
+### Autenticação com JWT - No Swagger
 - Registre um usuário usando a rota POST `/users/create`.
-- Obtenha um token JWT na rota POST `/users/token` com as credenciais do usuário.
+- Obtenha um token JWT no response da rota POST `/users/token` utlizando as credenciais cadastradas anteriormente.
 - Insira o token JWT na opção "Authentication" do Swagger para acessar as demais rotas protegidas.
 
-
-## Documentação
-A documentação Swagger está disponível em `/docs` na aplicação em execução.
 
 ---
 

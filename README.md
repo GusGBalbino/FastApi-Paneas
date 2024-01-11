@@ -42,6 +42,7 @@ A aplicação está disponível como uma imagem Docker no Docker Hub, execute os
 docker pull balbsdev/fastapi-paneas
 cd /home/{seu_user}/FastApi_Paneas
 docker-compose up --build
+```
 
 ### Acessando a Aplicação
 Após iniciar, a API estará disponível em `http://localhost:8000`.

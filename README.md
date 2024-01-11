@@ -58,6 +58,10 @@ Utilize as rotas documentadas no Swagger para interagir com a API.
 - Obtenha um 'acess_token' no response da rota POST `/users/token` utlizando as credenciais cadastradas anteriormente.
 - Insira o token JWT na opção "Authentication" do Swagger para acessar as demais rotas protegidas.
 
+### Atenção!!
+Certifique-se de deixar as portas 5432 e 8000 livres para o funcionamento do Banco de Dados e da API, respectivamente.
+
+Caso não seja possível liberar essas portas na sua máquina, você precisará alterar o arquivo 'docker-compose.yml' para remapear as portas do container para as portas que você deseja.
 ---
 
 Desenvolvido para o Desafio FastAPI - Paneas.

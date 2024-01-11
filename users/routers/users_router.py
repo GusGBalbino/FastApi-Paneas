@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from security import hash_password, verify_password
 from jwt_handler import bearer_scheme, verify_token, create_access_token
 from fastapi.security import HTTPAuthorizationCredentials
@@ -15,7 +15,7 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(b
     return verify_token(credentials)
 
 
-@router.post("/create",tags=["Create a new user to acess the plataform."], response_model=UserResponse, status_code=201)
+@router.post("/create", tags=["Create a new user to access the platform."], response_model=UserResponse, status_code=201)
 def create_user(user_request: UserCreateRequest, db: Session = Depends(get_db)) -> UserResponse:
     try:
         hashed_password = hash_password(user_request.password.get_secret_value())
@@ -24,6 +24,11 @@ def create_user(user_request: UserCreateRequest, db: Session = Depends(get_db)) 
         db.commit()
         db.refresh(user)
         return user
+    except IntegrityError as e:
+        if 'users_email_key' in str(e.orig):
+            raise HTTPException(status_code=400, detail="Email already in use")
+        else:
+            raise HTTPException(status_code=500, detail=f"Database error: {e.orig}")
     except SQLAlchemyError as e:
         raise HTTPException(status_code=500, detail=f"Database error: {e}")
 

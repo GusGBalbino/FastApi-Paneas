@@ -36,11 +36,10 @@ git clone https://github.com/GusGBalbino/FastApi_Paneas.git
 Adicione sua .env no diretório, baseada na .env-example disponibilizada.
 
 ### Executar com Docker
-A aplicação está disponível como uma imagem Docker no Docker Hub, execute os comandos a seguir:
+Em seguida, execute o os comandos Docker para rodar as APIs e o DataBase:
 ```bash
 (Linux)
-docker pull balbsdev/fastapi-paneas
-cd /home/{seu_user}/FastApi_Paneas
+cd /home/{seu_user}/FastApi_Paneas (Repositório que você clonou do git)
 docker compose up --build
 ```
 
